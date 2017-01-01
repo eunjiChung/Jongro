@@ -1,17 +1,12 @@
 class LinkedList {
 	ListNode headNode;
 	
-	public LinkedList() {
-		this.headNode = null;
-	}
-	
 	private class ListNode {
 		private Object data;
 		private ListNode next;
 		
 		ListNode(Object data) {
 			this.setData(data);
-			this.setNext(null);
 		}
 	
 		ListNode(Object data, ListNode next) {
@@ -51,6 +46,8 @@ class LinkedList {
 		return nodeToGet;
 	}
 	
+	
+	
 	public void addNodeToFirst(Object data) {
 		ListNode nodeToAdd = new ListNode(data,headNode);
 		headNode = nodeToAdd;
@@ -79,6 +76,7 @@ class LinkedList {
 		}	
 	}
 	
+
 	public void deleteFirstNode() {
 		if(isNodeEmpty(headNode)) return;
 		headNode = headNode.next;
@@ -93,7 +91,8 @@ class LinkedList {
 		tempNode.setNext(tempNode.getNext().getNext());
 	}
 	
-	public Object getNodeData(int index) {
+	
+	public Object getDataIndex(int index) {
 		return getNode(index).getData();
 	}
 	
@@ -106,23 +105,21 @@ class LinkedList {
 		}
 		return sb.toString();
 	}
-
-	
 }
 
 public class DataStructure_LinkedList {
 	public static void main(String[] argc) {
 		LinkedList list = new LinkedList();
 		list.addNodeToLast(1);
-		list.addNodeToLast(2);
-		list.addNodeToFirst(4);
-		list.addNodeToLast(3);
-		list.addNodeToPosition(5,3);
+		list.addNodeToLast("b");
+		list.addNodeToFirst(3);
+		list.addNodeToLast(4);
+		list.addNodeToPosition("¸¶",3);
 		System.out.println(list.printList());
 		list.deleteNodePosition(3);
 		list.deleteFirstNode();
 		System.out.println(list.printList());
-		System.out.println(list.getNodeData(0));
-		System.out.println(list.getNodeData(2));
+		System.out.println(list.getDataIndex(0));
+		System.out.println(list.getDataIndex(2));
 	}
 }
