@@ -1,0 +1,55 @@
+import java.util.*;
+
+public class back2167 {
+
+	static int arr[][]; // 왜 static?
+	
+	public static int addArr(int i, int j, int x, int y){
+		return 0;
+	};
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner s = new Scanner(System.in);
+		System.out.println("숫자를 두 개 입력하세요: ");
+		int n, m;
+		n = s.nextInt();
+		m = s.nextInt();
+		System.out.println("n : " + n);
+		System.out.println("m : " + m);
+		
+		System.out.println("배열을 입력하세요");
+		arr = new int[n][m];
+		for(int i = 0; i < n; i++){
+			for(int j = 0; j < m; j++){
+				arr[i][j] = s.nextInt();
+			}
+		}
+		
+		System.out.println("\n입력된 배열");
+		for(int i = 0; i < n; i++){
+			for(int j = 0; j < m; j++){
+				System.out.print(arr[i][j] + " ");
+			}
+			System.out.print("\n");
+		}
+		
+
+		System.out.print("\n몇 개 구할?");
+		int k = s.nextInt();
+		int i, j, x, y;
+		int total = 0;
+		for(int u = 0; u < k; u++){
+			System.out.println("input i,j,x,y");
+			i = s.nextInt();
+			j = s.nextInt();
+			x = s.nextInt();
+			y = s.nextInt();
+			
+			total = addArr(i, j, x, y);
+			System.out.println("total: " + total);
+		}
+		
+	}
+
+}
