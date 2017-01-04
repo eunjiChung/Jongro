@@ -1,0 +1,111 @@
+import java.util.*;
+
+/*
+ * Just LinkedList
+ */
+
+public class LinkedList{
+	
+	private class Node{
+		private int data;
+		private Node next;
+	}
+	
+	public static Node MakeEmpty(){
+		Node header = new Node();
+		header.data = 0;
+		header.next = null;
+		return header;
+	}
+	
+	public boolean IsEmpty(Node L){
+		if(L.next.equals(null)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	public boolean IsLast(Node p, Node L){
+		return p.next.equals(null);
+	}
+	
+	public Node FindPrev(int data, Node L){
+		Node p;
+		p = L;
+		
+		while(p.next.equals(null) && p.next.data != data){
+			p = p.next;
+		}
+		return p;
+	}
+	
+	public void Delete(int data, Node L){
+		Node p, TmpCell;
+		P = FindPrev();
+		
+		if(!IsLast(P, L)){
+			TmpCell = P.next;
+			P.next = TmpCell.next;
+		}
+	}
+	
+	public void Insert(int data, Node p, Node L){
+		Node TmpCell;
+		
+		if(TmpCell.equals(null)){
+			System.out.println("Out of space!!!");
+		}else{
+			TmpCell.data = data;
+			TmpCell.next = P.next;
+			P.next = TmpCell;
+		}
+	}
+	
+	public void DeleteList(Node L){
+		Node p, Tmp;
+		p = L.next;
+		L.next = null;
+		
+		while(p.equals(null)){
+			Tmp = p.next;
+			free(p);
+			p = p.next;
+		}
+	}
+	
+	public int Joshep(Node L){
+		
+	}
+	
+	public void PrintList(Node L){
+		while(!IsEmpty(L) && !L.next.equals(null)){
+			System.out.print(L.data + " ");
+		}
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner s = new Scanner(System.in);
+		Node L = MakeEmpty();
+		Node Joshep_L = MakeEmpty();
+		 
+		int n = s.nextInt();
+		int m = s.nextInt();
+		int data;
+		
+		for(int i = 0; i < n; i++){
+			data = s.nextInt();
+			Insert(num, FindPrev(data, L), L);
+		}
+		PrintList(L);
+		
+		int num;
+		while(!IsEmpty(L)){
+			num = Joshep(L);
+			Insert(num, FindPrev(num, Joshep_L), Joshep_L);
+		}		
+		PrintList(Joshep_L);
+	}
+
+}
