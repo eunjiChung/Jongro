@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Stack;
 
 class BracketStack {
 	private char[] data;
@@ -40,6 +41,23 @@ class Bracket {
 		if(stack.isEmpty()) return true;
 		else return false;
 	}
+	
+	boolean runThroughAPI(String str) {
+		Stack<Character> stack = new Stack<>();		
+		try {
+			for(int i=0; i<str.length(); i++) {
+				if(str.charAt(i) == '(') {
+						stack.push(str.charAt(i));
+				} else if(str.charAt(i) == ')') {
+					stack.pop();
+				}
+			}
+		} catch(Exception e) {
+			return false;
+		}
+		if(stack.isEmpty()) return true;
+		else return false;
+	}
 }
 
 public class Baek9012_Bracket {
@@ -51,5 +69,6 @@ public class Baek9012_Bracket {
 			if(b.run(sc.nextLine())) System.out.println("YES");
 			else System.out.println("NO");
 		}
+		sc.close();
 	}
 }
