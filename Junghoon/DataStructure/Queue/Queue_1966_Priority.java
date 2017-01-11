@@ -15,14 +15,14 @@ class G_p {
 		for(int i=0;i<size;i++) {
 			int temp=sc.nextInt();
 			if(i == index) find=temp;
-			l.add(temp);			//ÀÔ·Â°ªÀ» Å¥¿¡ ÀúÀå
-			pl.add(temp);			//ÀÔ·Â°ªÀÇ ¿ì¼±¼øÀ§µéÀ» ÀúÀå
+			l.add(temp);			//ìž…ë ¥ê°’ì„ íì— ì €ìž¥
+			pl.add(temp);			//ìž…ë ¥ê°’ì˜ ìš°ì„ ìˆœìœ„ë“¤ì„ ì €ìž¥
 		}
-		rpl.addAll(pl);				//¿ì¼±¼øÀ§¸¦ ¿ª¼øÀ¸·Î ÀúÀå
+		rpl.addAll(pl);				//ìš°ì„ ìˆœìœ„ë¥¼ ì—­ìˆœìœ¼ë¡œ ì €ìž¥
 									/*  l:10,12,11,13
-									 * pl:13,11,12,10->¿ªÀ¸·Î rpl:10,12,11,13->10,12,11,13 ¼ø¼­·Î »©¸é µÈ´Ù´Â°Å
-									 * l°ú rpl¶û ºñ±³ÇØ°¡¸é¼­  »©³ª°¡¸éµÊ 
-									 * find¿¡´Â Ã£´Â °ªÀ» ÀúÀå index´Â Ã£°íÀÚÇÏ´Â °ªÀÇ ÀÎµ¦½º
+									 * pl:10,11,12,13->ì—­ìœ¼ë¡œ rpl:13,12,11,10
+									 * lê³¼ rplëž‘ ë¹„êµí•´ê°€ë©´ì„œ  ë¹¼ë‚˜ê°€ë©´ë¨ 
+									 * findì—ëŠ” ì°¾ëŠ” ê°’ì„ ì €ìž¥ indexëŠ” ì°¾ê³ ìží•˜ëŠ” ê°’ì˜ ì¸ë±ìŠ¤
 									 */
 		for(int i=0;i<size;i++) {
 			System.out.println("l["+i+"]:"+l.poll()+"/"+"rpl["+i+"]:"+rpl.poll());
