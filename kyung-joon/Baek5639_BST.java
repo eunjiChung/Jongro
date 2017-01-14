@@ -50,13 +50,10 @@ public class Baek5639_BST {
 		Scanner sc = new Scanner(System.in);
 		BaekBST bst = new BaekBST();
 		
-		try {
-			while(sc.hasNextInt()) {
-				bst.Insert(Integer.parseInt(sc.nextLine()));
-			}
-		} catch(Exception e) {
-			bst.printPostOrder(bst.root);
+		while(sc.hasNextLine()) {
+			bst.Insert(Integer.parseInt(sc.nextLine()));
 		}
+		bst.printPostOrder(bst.root);	
 		sc.close();
 	}
 	
