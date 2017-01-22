@@ -65,7 +65,7 @@ int compare(NODE * pHead) {
 
 	NODE * cur = pHead->next;
 
-	first = cur->data;			// Ã³À½ °ª ÀúÀå
+	first = cur->data;			// ì²˜ìŒ ê°’ ì €ì¥
 
 	while (cur != NULL) {
 		if (first < cur->data) {
@@ -75,7 +75,7 @@ int compare(NODE * pHead) {
 		cur = cur->next;
 	}
 
-	return key;				// Ã³À½ °ªÀÌ Á¦ÀÏ Å©¸é 0À» °°°Å³ª ÀÛÀ¸¸é 1À» ¹İÈ¯ÇÑ´Ù.
+	return key;				// ì²˜ìŒ ê°’ì´ ì œì¼ í¬ë©´ 0ì„ ê°™ê±°ë‚˜ ì‘ìœ¼ë©´ 1ì„ ë°˜í™˜í•œë‹¤.
 }
 
 void clear(NODE * pHead) {
@@ -86,14 +86,14 @@ void clear(NODE * pHead) {
 
 int main(void) {
 	NODE head = { 0 };
-	int goal = 0;						// Ãâ·ÂÇÏ°íÀÚ ÇÏ´Â °ª. ÀÛ¾÷ Ã³¸®½Ã¸¶´Ù 1¾¿ Áõ°¡
+	int goal = 0;						// ì¶œë ¥í•˜ê³ ì í•˜ëŠ” ê°’. ì‘ì—… ì²˜ë¦¬ì‹œë§ˆë‹¤ 1ì”© ì¦ê°€
 	int i, j, k, l, testcase, length = 0;
 	int priority[100];
 	scanf_s("%d", &testcase);
 
 	for (i = 0; i < testcase; i++) {
-		location = 0;								// testcase°¡ ¹Ù²ğ¶§¸¶´Ù ÀÌ °ªÀº ÃÊ±âÈ­
-		goal = 0;									// testcase°¡ ¹Ù²ğ¶§¸¶´Ù ÀÌ °ªÀº ÃÊ±âÈ­
+		location = 0;								// testcaseê°€ ë°”ë€”ë•Œë§ˆë‹¤ ì´ ê°’ì€ ì´ˆê¸°í™”
+		goal = 0;									// testcaseê°€ ë°”ë€”ë•Œë§ˆë‹¤ ì´ ê°’ì€ ì´ˆê¸°í™”
 		scanf_s("%d", &length);
 		scanf_s("%d", &location);
 		
@@ -102,33 +102,33 @@ int main(void) {
 		}
 
 		for (k = 0; k < length; k++) {
-			addTail(&head, priority[k]);			// ¿¬°á¸®½ºÆ®¿¡ ²¿¸®¿¡ »ğÀÔÇÏ´Â Çü½Ä (Å¥¿Í µ¿ÀÛ¿ø¸® À¯»ç)
+			addTail(&head, priority[k]);			// ì—°ê²°ë¦¬ìŠ¤íŠ¸ì— ê¼¬ë¦¬ì— ì‚½ì…í•˜ëŠ” í˜•ì‹ (íì™€ ë™ì‘ì›ë¦¬ ìœ ì‚¬)
 		}
 		/////////////////////////////////////////////////////////////////////////////////////
-		while( !isEmpty(&head) ){					// ºñ¾îÀÖÀ¸¸é 1À» µé¾îÀÖÀ¸¸é 0À» ¸®ÅÏÇÑ´Ù.
-			if (compare(&head) == 0) {				// ÇöÀçÀÛ¾÷ÀÌ Á¦ÀÏ Å©¸é 0À» ¾Æ´Ï¸é 1À» ¹İÈ¯
-				goal += 1;							// ÇöÀç ÀÛ¾÷À» Ã³¸®ÇÒ¶§¸¶´Ù 1¾¿ Áõ°¡
-				if (location == 0) {				// location index°¡ ¸Ç ¾ÕÀÌ¸é 
-					printf("%d\n", goal);			//  °°À¸¸é °á°ú°ª Ãâ·ÂÈÄ Á¾·á
+		while( !isEmpty(&head) ){					// ë¹„ì–´ìˆìœ¼ë©´ 1ì„ ë“¤ì–´ìˆìœ¼ë©´ 0ì„ ë¦¬í„´í•œë‹¤.
+			if (compare(&head) == 0) {				// í˜„ì¬ì‘ì—…ì´ ì œì¼ í¬ë©´ 0ì„ ì•„ë‹ˆë©´ 1ì„ ë°˜í™˜
+				goal += 1;							// í˜„ì¬ ì‘ì—…ì„ ì²˜ë¦¬í• ë•Œë§ˆë‹¤ 1ì”© ì¦ê°€
+				if (location == 0) {				// location indexê°€ ë§¨ ì•ì´ë©´ 
+					printf("%d\n", goal);			//  ê°™ìœ¼ë©´ ê²°ê³¼ê°’ ì¶œë ¥í›„ ì¢…ë£Œ
 					break;
-				}else {								// ¾Æ´Ï¸é °è¼Ó ÁøÇà
+				}else {								// ì•„ë‹ˆë©´ ê³„ì† ì§„í–‰
 				}								
-				removeHead(&head);					// Çìµå »èÁ¦
-				location -= 1;						// »èÁ¦ ÈÄ ·ÎÄÉÀÌ¼Ç 1 Â÷°¨
-			}else {									// ²¿¸®Ãß°¡ ÈÄ Çìµå »èÁ¦
-				addTail(&head, getHead(&head));		// ²¿¸® Ãß°¡
-				removeHead(&head);					// Çìµå »èÁ¦
+				removeHead(&head);					// í—¤ë“œ ì‚­ì œ
+				location -= 1;						// ì‚­ì œ í›„ ë¡œì¼€ì´ì…˜ 1 ì°¨ê°
+			}else {									// ê¼¬ë¦¬ì¶”ê°€ í›„ í—¤ë“œ ì‚­ì œ
+				addTail(&head, getHead(&head));		// ê¼¬ë¦¬ ì¶”ê°€
+				removeHead(&head);					// í—¤ë“œ ì‚­ì œ
 
-				if (location == 0) {					// ÇØ´ç ÀÎµ¦½º°¡ ¸Ç ¾ÕÀÏ¶§
-					location += countNode(&head) - 1;	// ÀÎµ¦½º¸¦ ¸Ç µÚ·Î ¼³Á¤
+				if (location == 0) {					// í•´ë‹¹ ì¸ë±ìŠ¤ê°€ ë§¨ ì•ì¼ë•Œ
+					location += countNode(&head) - 1;	// ì¸ë±ìŠ¤ë¥¼ ë§¨ ë’¤ë¡œ ì„¤ì •
 				}
 				else {
-					location -= 1;						// ÇØ´ç ÀÎµ¦½º°¡ ¸Ç ¾ÕÀÌ ¾Æ´Ñ °æ¿ì ÀÎµ¦½º¸¦ 1 °¨¼Ò
+					location -= 1;						// í•´ë‹¹ ì¸ë±ìŠ¤ê°€ ë§¨ ì•ì´ ì•„ë‹Œ ê²½ìš° ì¸ë±ìŠ¤ë¥¼ 1 ê°ì†Œ
 				}
 			}
 		}
 		////////////////////////////////////////////////////////////////////////////////////////
-		clear(&head);							// ´Ù Áö¿î´Ù
+		clear(&head);							// ë‹¤ ì§€ìš´ë‹¤
 	}
 	return 0;
 }
