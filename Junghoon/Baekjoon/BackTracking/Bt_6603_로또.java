@@ -9,7 +9,7 @@ class Lotto {
 	
 	public void lottoFunc(int[] arr,Boolean[] arrBool,int depth,int num) {
 		
-		if(depth>5) {							//¸ğµç ·Î¶Ç¹øÈ£°¡ ¼±ÅÃµÇ¾úÀ»¶§
+		if(depth>5) {							//ëª¨ë“  ë¡œë˜ë²ˆí˜¸ê°€ ì„ íƒë˜ì—ˆì„ë•Œ
 			for(int z=0;z<max;z++) {
 				if(arrBool[z]) {
 					System.out.print(arr[z]+" ");
@@ -19,20 +19,20 @@ class Lotto {
 			return;
 		}
 		
-		if(num>max-1) {						   //ÀÎµ¦½º ¼±ÅÃ¹üÀ§¿¡¼­ ³Ñ¾î°¬À»¶§
+		if(num>max-1) {						   //ì¸ë±ìŠ¤ ì„ íƒë²”ìœ„ì—ì„œ ë„˜ì–´ê°”ì„ë•Œ
 			return;
 		}
 		
-		if(!arrBool[num]) {					  //¼±ÅÃ ¾ÈµÆÀ¸¸é
-			arrBool[num]=true;				  //¼±ÅÃ
+		if(!arrBool[num]) {					  //ì„ íƒ ì•ˆëìœ¼ë©´
+			arrBool[num]=true;				  //ì„ íƒ
 			lottoFunc(arr,arrBool,depth+1,num+1);		
 			
-			arrBool[num]=false;							//´Ù½Ã µ¹¾Æ¿À¸é¼­ false·Î
+			arrBool[num]=false;							//ë‹¤ì‹œ ëŒì•„ì˜¤ë©´ì„œ falseë¡œ
 		}
-		lottoFunc(arr,arrBool,depth,num+1); 		   //¼±ÅÃµÇ¾îÀÖÀ¸¸é ±×³É ´ÙÀ½ ÀÎµ¦½º·Î	
+		lottoFunc(arr,arrBool,depth,num+1); 		   //ì„ íƒë˜ì–´ìˆìœ¼ë©´ ê·¸ëƒ¥ ë‹¤ìŒ ì¸ë±ìŠ¤ë¡œ	
 	}
 }
-public class Bt_6603_·Î¶Ç {
+public class Bt_6603_ë¡œë˜ {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -48,6 +48,7 @@ public class Bt_6603_·Î¶Ç {
 				arr[i]=sc.nextInt();
 			}
 			lotto.lottoFunc(arr,arrBool,0,0);
+			System.out.println("");
 		}
 	}
 
