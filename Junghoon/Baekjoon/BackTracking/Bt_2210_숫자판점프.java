@@ -3,23 +3,24 @@ import java.util.Scanner;
 
 class Jump {
 	
-	HashSet result_set=new HashSet(); //Áßº¹µÈ °ªÀº ÀúÀå¾Ê´Â set
+	HashSet result_set=new HashSet(); //ì¤‘ë³µëœ ê°’ì€ ì €ì¥ì•ŠëŠ” set
 	
 	public void jumpFunc(int[][] matrix,int i,int j,int depth,int result) {
 		 
-		 if(depth>=6) {								//6ÀÚ¸® ¼ıÀÚ¸¸µé¾îÁö¸é
-		      	 result_set.add(result);            //set¿¡ add
+		 if(depth>=6) {								//6ìë¦¬ ìˆ«ìë§Œë“¤ì–´ì§€ë©´
+		      	 result_set.add(result);            //setì— add
+			 return ;
 		 }
 		   
-		 result+=result*10+matrix[i][j];			// ÇöÀç ÀÎµ¦½º°ªÀ» ´©ÀûÀúÀå
-		 if(i<4) jumpFunc(matrix,i+1,j, depth+1,result);	//Àç±ÍÀûÀ¸·Î ÀÎµ¦½ºÀÌµ¿
+		 result+=result*10+matrix[i][j];			// í˜„ì¬ ì¸ë±ìŠ¤ê°’ì„ ëˆ„ì ì €ì¥
+		 if(i<4) jumpFunc(matrix,i+1,j, depth+1,result);	//ì¬ê·€ì ìœ¼ë¡œ ì¸ë±ìŠ¤ì´ë™
 		 if(j<4) jumpFunc(matrix,i,j+1, depth+1,result);
 		 if(i>0) jumpFunc(matrix,i-1,j, depth+1,result);
 		 if(j>0) jumpFunc(matrix,i,j-1, depth+1,result);
 	}
 }
 
-public class Bt_2210_¼ıÀÚÆÇÁ¡ÇÁ {
+public class Bt_2210_ìˆ«ìíŒì í”„ {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -36,6 +37,6 @@ public class Bt_2210_¼ıÀÚÆÇÁ¡ÇÁ {
 				jump.jumpFunc(matrix,i,j,0,0);
 			}
 		}
-		System.out.println(jump.result_set.size());  // setÀÇ °¹¼ö Ãâ·Â
+		System.out.println(jump.result_set.size());  // setì˜ ê°¯ìˆ˜ ì¶œë ¥
 	}
 }
